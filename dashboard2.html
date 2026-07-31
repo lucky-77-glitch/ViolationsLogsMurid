@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Murid - SIPP-STUPA</title>
+  <style>
+    /* Reset & Fonts */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f9; /* Latar belakang abu-abu terang */
+      min-height: 100vh;
+      color: #333333;
+    }
+
+    /* Navbar / Header Atas */
+    .navbar {
+      background-color: #0c4d7d; /* Warna biru gelap header */
+      color: #ffffff;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .nav-welcome {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Icon Help / Bantuan (?) */
+    .help-icon {
+      width: 26px;
+      height: 26px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* Avatar Logo di Header */
+    .header-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      object-fit: contain;
+      padding: 2px;
+    }
+
+    /* Container Utama Content */
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px 16px 40px 16px;
+    }
+
+    /* Card Box Standar */
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Card Total Poin */
+    .card-poin {
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    .poin-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #2c3e50;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .poin-number {
+      font-size: 46px;
+      font-weight: 700;
+      color: #333333;
+    }
+
+    /* Card Riwayat Log */
+    .card-title {
+      color: #0c4d7d;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    /* Tabel Riwayat Log */
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .log-table th {
+      background-color: #ebf3f8;
+      color: #0c4d7d;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 12px 14px;
+    }
+
+    .log-table th.col-tanggal {
+      text-align: left;
+      width: 40%;
+    }
+
+    .log-table th.col-deskripsi {
+      text-align: right;
+      width: 60%;
+    }
+
+    .log-table td {
+      padding: 16px 14px;
+      color: #666666;
+      font-size: 14px;
+      border-bottom: 3px solid #cccccc; /* Garis bawah tabel */
+    }
+
+    /* Tombol Aksi */
+    .btn-action {
+      width: 100%;
+      padding: 13px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 12px;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-action:hover {
+      opacity: 0.9;
+    }
+
+    .btn-password {
+      background-color: #0c4d7d; /* Warna biru */
+      color: #ffffff;
+    }
+
+    .btn-logout {
+      background-color: #cb2a2a; /* Warna merah */
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Top Nav -->
+  <header class="navbar">
+    <div class="nav-left">
+      <span class="nav-title">Dashboard</span>
+      <span class="nav-welcome">Murid</span>
+    </div>
+    <div class="nav-welcome" style="font-size: 13px; text-align: right; margin-right: 8px;">
+      Halo, DJAKA<br>TRI FADALI
+    </div>
+    <div class="nav-right">
+      <a href="#" class="help-icon" title="Bantuan">?</a>
+      <img src="logo.png" alt="Logo Sekolah" class="header-logo">
+    </div>
+  </header>
+
+  <!-- Container Konten -->
+  <main class="container">
+
+    <!-- Box Total Poin -->
+    <section class="card card-poin">
+      <h2 class="poin-title">TOTAL POIN ANDA SAAT INI</h2>
+      <div class="poin-number">-15</div>
+    </section>
+
+    <!-- Box Riwayat Log -->
+    <section class="card">
+      <h2 class="card-title">Riwayat Log (Prestasi &<br>Pelanggaran)</h2>
+      
+      <table class="log-table">
+        <thead>
+          <tr>
+            <th class="col-tanggal">Tanggal</th>
+            <th class="col-deskripsi">Deskripsi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left; vertical-align: top; font-weight: 600; color: #2c3e50;">
+              31-07-2026
+            </td>
+            <td style="text-align: left; color: #333333; line-height: 1.4;">
+              Melanggar peraturan
+              sekolah.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Tombol Navigasi Bawah -->
+    <button type="button" class="btn-action btn-password">Ganti Password</button>
+    <button type="button" class="btn-action btn-logout">Logout</button>
+
+  </main>
+
+</body>
+</html>
